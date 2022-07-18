@@ -41,6 +41,7 @@ const saveName = () =>{
     } else{
         name1.innerText = firstPlayer;
         name2.innerText = secondPlayer;
+        img.style.display = "none";
         player1 = ""
         player2 = ""
     }
