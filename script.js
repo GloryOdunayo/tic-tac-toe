@@ -32,6 +32,7 @@ const test = (e) => {
     let firstPlayer = player1.value;
     let secondPlayer = player2.value;
     let songWin = new Audio ("audio/mixkit-ending-show-audience-clapping-478.wav")
+    let songLose = new Audio ("audio/AUD-20200617-WA0066.mp3")
     if(firstPlayer != "" && secondPlayer != ""){
         player1.className = "form-control border border-2 border-danger"
         player2.className = "form-control border border-2 border-danger"
@@ -50,6 +51,7 @@ const test = (e) => {
                 return;
             } else if(one1.innerText != "" && one2.innerText != "" && one3.innerText != "" && two1.innerText !="" && two2.innerText != "" && two3.innerText != "" && three1.innerText != "" && three2.innerText != "" && three3.innerText !=""){
                 board.innerText = "Stalemate"
+                songLose.play()
                 setTimeout(cont, 3000);
                 // cont()
                 return;
@@ -69,6 +71,7 @@ const test = (e) => {
                 return;
             }else if(one1.innerText != "" && one2.innerText != "" && one3.innerText != "" && two1.innerText !="" && two2.innerText != "" && two3.innerText != "" && three1.innerText != "" && three2.innerText != "" && three3.innerText !=""){
                 board.innerText = "Stalemate"
+                songLose.play()
                 setTimeout(cont, 3000);
                 // cont()
             }
