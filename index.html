@@ -10,19 +10,16 @@
 <style>
     body{
         background-image: url(im.jpeg);
-    }
-    table{
-        height: 400px;
-        width: 400px;
-        padding: 2px;
+        font-family: cursive;
     }
     .toe{
-        padding-top: 30px;
+        /* padding-top: 30px; */
         text-align: center;
-        font-size: xx-large; 
+        font-size: 70px; 
         border-radius: 20px;
         width: 120px;
-        height: 120px;       
+        height: 120px; 
+        /* font-family: 'Permanent Marker', cursive;      */
     }
     
     #tic{
@@ -31,6 +28,27 @@
         padding: 2px;
     }
 
+    .toe:hover{
+        /* background-image: url(TIC-TAC-TOE\Images.jpeg); */
+        width: 121px;
+        width: 121px;
+    }
+
+   .border-danger:hover{
+        box-shadow: 0 0px 5px #E61919, 0 0px 5px #E61919, 0 0px 5px #E61919;
+    }
+
+    .border-primary:hover{
+        box-shadow: 0 0px 5px #1919eb, 0 0px 5px #1919eb, 0 0px 5px #1919eb ;
+    }
+
+    .border-success:hover{
+        box-shadow: 0 0px 5px #69c069, 0 0px 5px #69c069, 0 0px 5px #69c069;
+    }
+
+    #button{
+        margin-left: 115px;
+    }
     /* #img{
         /* background-image: url(Images.jpeg); */
         /* background-size: cover; */
@@ -50,7 +68,28 @@
         font-size: xx-large; 
         width: 100px;
         height: 100px;       
-    }
+        }
+        #button{
+        margin-left: 85px;
+        }
+
+        .toe:hover{
+        /* background-image: url(TIC-TAC-TOE\Images.jpeg); */
+        width: 101px;
+        width: 101px;
+        }
+
+        .border-danger:hover{
+            box-shadow: 0 0px 5px #E61919, 0 0px 5px #E61919, 0 0px 5px #E61919 ;
+        }
+
+        .border-primary:hover{
+            box-shadow: 0 0px 5px #1919eb, 0 0px 5px #1919eb, 0 0px 5px #1919eb ;
+        }
+
+        .border-success:hover{
+            box-shadow: 0 0px 5px #69c069, 0 0px 5px #69c069, 0 0px 5px #69c069 ;
+        }
     }
 </style>
 <body class="mx-5">
@@ -62,11 +101,11 @@
                     <h1>Participants</h1>
                     <div class="col-lg-6 col-md-4 col-sm-7">
                         <label for="" class="h2">First Player</label>
-                        <input type="text" id="player1" placeholder="Enter your Name" class="form-control bg-light shadow">
+                        <input type="text" id="player1" placeholder="Enter your Name" class="form-control bg-light shadow" minlength="5">
                     </div>
                     <div class="col-lg-6 col-md-4 col-sm-7">
                         <label for="" class="h2">Second Player</label>
-                        <input type="text" id="player2" placeholder="Enter your Name" class="form-control bg-light">
+                        <input type="text" id="player2" placeholder="Enter your Name" class="form-control bg-light" minlength="5">
                     </div>
                     <div>
                         <button type="submit" class="btn mt-2 bg-secondary shadow text-light" onclick="saveName()">submit</button>
@@ -78,46 +117,48 @@
                 </div>
             <div id="tic" class="m-auto">
                 <div class="border-1 row m-2 gap-2">
-                    <div id="one1" class="toe border border-secondary bg-light" onclick="test(event)"></div>
-                    <div id="one2" class="toe border border-secondary" onclick="test(event)"></div>
-                    <div id="one3" class="toe border border-secondary bg-light"  onclick="test(event)"></div>
+                    <div id="one1" class="toe border border-danger bg-light" onclick="test(event)"></div>
+                    <div id="one2" class="toe border border-success" onclick="test(event)"></div>
+                    <div id="one3" class="toe border border-primary bg-light"  onclick="test(event)"></div>
                 </div>
                 <div id="tac" class="border-1 m-2 row gap-2">
-                    <div id="two1" class="toe border border-secondary" onclick="test(event)"></div>
-                    <div id="two2" class="toe border border-secondary bg-light" onclick="test(event)"></div>
-                    <div id="two3" class="toe border border-secondary" onclick="test(event)"></div>
+                    <div id="two1" class="toe border border-success" onclick="test(event)"></div>
+                    <div id="two2" class="toe border border-primary bg-light" onclick="test(event)"></div>
+                    <div id="two3" class="toe border border-danger" onclick="test(event)"></div>
                 </div>
                 <div id="tac" class="border-1 m-2 row gap-2">
-                    <div id="three1" class="toe border border-secondary bg-light" onclick="test(event)"></div>
-                    <div id="three2" class="toe border border-secondary" onclick="test(event)"></div>
-                    <div id="three3" class="toe border border-secondary bg-light" onclick="test(event)"></div>
+                    <div id="three1" class="toe border border-primary bg-light" onclick="test(event)"></div>
+                    <div id="three2" class="toe border border-danger" onclick="test(event)"></div>
+                    <div id="three3" class="toe border border-success bg-light" onclick="test(event)"></div>
+                </div>
+                <div id="button">
+                    <button class="btn bg-success text-light" onclick="cont()">Continue</button>
+                    <button class="btn bg-danger text-white" onclick="restart()">Restart</button>
                 </div>
             </div>
-            <div>
-                <button class="btn bg-success text-light" onclick="cont()">Continue</button>
-                <button class="btn bg-danger text-white" onclick="restart()">Restart</button>
-            </div>
-            <div class="mt-2 col-12">
-                <p id="board" class="display-4"></p>
-            </div>
+        </div>
+        <div class="mt-2 col-12">
+            <p id="board" class="display-4 fw-bold"></p>
         </div>
     </section>
     <div>
-        <strong>Score Board</strong>
-        <div class="row border border-secondary">
-            <p class="col-6">Name</p>
-            <p class="col-3">ID</p>
-            <p class="col-3">Score</p>
-        </div>
-        <div class="row border border-secondary">
-            <p class="col-6" id="name1"></p>
-            <p class="col-3">X</p>
-            <p class="col-3" id="score1">0</p>
-        </div>
-        <div class="row border border-secondary">
-            <p class="col-6" id="name2"></p>
-            <p class="col-3">O</p>
-            <p class="col-3" id="score2">0</p>
+        <strong class="text-decoration-underline fs-3">Score Board</strong>
+        <div class="border border-dark px-3">
+            <div class="row text-center pt-3 border-bottom border-dark border-2">
+                <p class="col-6 fs-2 fw-bold">Name</p>
+                <p class="col-3 fs-2 fw-bold">ID</p>
+                <p class="col-3 fs-2 fw-bold">Score</p>
+            </div>
+            <div class="row text-center">
+                <p class="col-6" id="name1"></p>
+                <p class="col-3 fs-2 fw-bold">X</p>
+                <p class="col-3 fs-2" id="score1">0</p>
+            </div>
+            <div class="row text-center">
+                <p class="col-6" id="name2"></p>
+                <p class="col-3 fs-2 fw-bold">O</p>
+                <p class="col-3 fs-2" id="score2">0</p>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
